@@ -1,0 +1,15 @@
+C:\Users\aravindr\Desktop\app\CA\math\bin\Debug\net7.0\math.exe
+C:\Users\aravindr\Desktop\app\CA\math\bin\Debug\net7.0\math.deps.json
+C:\Users\aravindr\Desktop\app\CA\math\bin\Debug\net7.0\math.runtimeconfig.json
+C:\Users\aravindr\Desktop\app\CA\math\bin\Debug\net7.0\math.dll
+C:\Users\aravindr\Desktop\app\CA\math\bin\Debug\net7.0\math.pdb
+C:\Users\aravindr\Desktop\app\CA\math\obj\Debug\net7.0\math.csproj.AssemblyReference.cache
+C:\Users\aravindr\Desktop\app\CA\math\obj\Debug\net7.0\math.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\aravindr\Desktop\app\CA\math\obj\Debug\net7.0\math.AssemblyInfoInputs.cache
+C:\Users\aravindr\Desktop\app\CA\math\obj\Debug\net7.0\math.AssemblyInfo.cs
+C:\Users\aravindr\Desktop\app\CA\math\obj\Debug\net7.0\math.csproj.CoreCompileInputs.cache
+C:\Users\aravindr\Desktop\app\CA\math\obj\Debug\net7.0\math.dll
+C:\Users\aravindr\Desktop\app\CA\math\obj\Debug\net7.0\refint\math.dll
+C:\Users\aravindr\Desktop\app\CA\math\obj\Debug\net7.0\math.pdb
+C:\Users\aravindr\Desktop\app\CA\math\obj\Debug\net7.0\math.genruntimeconfig.cache
+C:\Users\aravindr\Desktop\app\CA\math\obj\Debug\net7.0\ref\math.dll
