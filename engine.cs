@@ -1,9 +1,14 @@
+using Models;
+
 namespace MathGame
 {
     internal class Engine
     {
+        int score = 0;
+        public static List<History> histories = new List<History>();
         internal void Add()
         {
+
             var random = new Random();
 
             int firstNumber = random.Next(0, 9);
@@ -12,13 +17,21 @@ namespace MathGame
 
             var answer = Console.ReadLine();
 
+            answer = ValidateAnswer(answer);
+
             if (int.Parse(answer) == firstNumber + secondNumber)
             {
                 Console.WriteLine("Your answer is correct !!");
+                score++;
+                Console.WriteLine($"Your score is:{score}");
+                AddHistory(score, GameType.Addition);
+
             }
             else
             {
                 Console.WriteLine("Your answer is wrong !");
+                Console.WriteLine($"Your score is:{score}");
+                AddHistory(score, GameType.Addition);
             }
 
 
@@ -26,6 +39,7 @@ namespace MathGame
 
         internal void Sub()
         {
+
             var random = new Random();
 
             int firstNumber = random.Next(0, 9);
@@ -37,15 +51,22 @@ namespace MathGame
             if (int.Parse(answer) == firstNumber - secondNumber)
             {
                 Console.WriteLine("Your answer is correct !!");
+                score++;
+                Console.WriteLine($"Your score is:{score}");
+                AddHistory(score, GameType.Subtraction);
+
             }
             else
             {
                 Console.WriteLine("Your answer is wrong !");
+                Console.WriteLine($"Your score is:{score}");
+                AddHistory(score, GameType.Subtraction);
             }
 
         }
         internal void Multiply()
         {
+
             var random = new Random();
 
             int firstNumber = random.Next(0, 9);
@@ -57,15 +78,21 @@ namespace MathGame
             if (int.Parse(answer) == firstNumber * secondNumber)
             {
                 Console.WriteLine("Your answer is correct !!");
+                score++;
+                Console.WriteLine($"Your score is:{score}");
+                AddHistory(score, GameType.Multiplication);
             }
             else
             {
                 Console.WriteLine("Your answer is wrong !");
+                Console.WriteLine($"Your score is:{score}");
+                AddHistory(score, GameType.Multiplication);
             }
 
         }
         internal void Divide()
         {
+
             int[] divisionNumbers = GetDivisionNumber();
             int firstNumber = divisionNumbers[0];
             int secondNumber = divisionNumbers[1];
@@ -77,10 +104,15 @@ namespace MathGame
             if (int.Parse(answer) == firstNumber / secondNumber)
             {
                 Console.WriteLine("Your answer is correct !!");
+                score++;
+                Console.WriteLine($"Your score is:{score}");
+                AddHistory(score, GameType.Division);
             }
             else
             {
                 Console.WriteLine("Your answer is wrong !");
+                Console.WriteLine($"Your score is:{score}");
+                AddHistory(score, GameType.Division);
             }
 
 
@@ -105,6 +137,39 @@ namespace MathGame
             result[1] = secondNumber;
 
             return result;
+        }
+
+        public static void AddHistory(int score, GameType type)
+        {
+            histories.Add(new History
+            {
+                Score = score,
+                Type = type,
+                Date = DateTime.Now
+            });
+
+
+        }
+
+        public void ShowHistory()
+        {
+            var gamesToPrint = histories.OrderBy(x=> x.Date);
+
+
+            foreach (History game in gamesToPrint)
+            {
+                Console.WriteLine($"{game.Date} {game.Type} Total Score = {game.Score}");
+            }
+        }
+
+        public static string ValidateAnswer(string answer)
+        {
+            while (!Int32.TryParse(answer,out _))
+            {
+                Console.WriteLine("Please enter an Integer");
+                answer = Console.ReadLine();
+            }
+            return answer;
         }
     }
 }

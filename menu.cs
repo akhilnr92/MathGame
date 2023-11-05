@@ -4,6 +4,8 @@ namespace MathGame
     public class Menu
     {
         Engine engine = new Engine();
+
+        
         internal void ShowMenu(string name, DateTime date)
         {
             bool isGameOn = true;
@@ -17,6 +19,7 @@ namespace MathGame
  B - Subtraction
  C - Multiplication
  D - Division
+ H - History
  Q - Quit");
 
                 Console.WriteLine("---------------------------------------");
@@ -48,6 +51,12 @@ namespace MathGame
                         Console.WriteLine("Division");
                         engine.Divide();
                         break;
+
+                    case "H":
+
+                        Console.WriteLine("History");
+                        engine.ShowHistory();
+                        break;    
 
                     case "Q":
 
